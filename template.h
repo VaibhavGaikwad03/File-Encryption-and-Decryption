@@ -9,10 +9,13 @@ class QCloseEvent;
 class Template : public QMainWindow
 {
     Q_OBJECT;
+
 public:
     Template(QMainWindow *parent = 0);
+
 private:
     QWidget *background;
+
 protected:
     void closeEvent(QCloseEvent *event);
 };

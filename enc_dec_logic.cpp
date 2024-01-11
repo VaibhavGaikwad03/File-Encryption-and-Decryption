@@ -12,7 +12,7 @@ EncryptionDecryption::EncryptionDecryption() : m_strCheck("`i^]jn`o"), m_iCoun
 int EncryptionDecryption::create_file(const string strFileName)
 {
     if (strFileName == "")
-        return -1;  // enter the file name
+        return -1; // enter the file name
 
     if (is_exists(strFileName))
         return -2; // file already exists
@@ -26,9 +26,9 @@ int EncryptionDecryption::create_file(const string strFileName)
 int EncryptionDecryption::write_file(const string strFileName, const string strData, const int iAppend, const int iNewLine)
 {
     if (strFileName == "")
-        return -1;  // enter the file name
+        return -1; // enter the file name
     if (strData == "")
-        return -2;  //enter the data
+        return -2; // enter the data
     if (!is_exists(strFileName))
         return -3; // file does not exists
 
@@ -63,16 +63,16 @@ int EncryptionDecryption::write_file(const string strFileName, const string strD
 int EncryptionDecryption::encrypt_data(const string strFileName, string strPassword)
 {
     int iCnt1 = 0, iCnt2 = 0;
-    string* strData = NULL;
+    string *strData = NULL;
     string strLine = "";
 
     if (strFileName == "")
         return -1; // enter the file name
 
     if (strPassword == "")
-        return -2; //enter the password
+        return -2; // enter the password
 
-    if (strPassword.length() != 8)   //password should contains strictly 8 characters
+    if (strPassword.length() != 8) // password should contains strictly 8 characters
         return -3;
 
     if (!is_exists(strFileName))
@@ -107,14 +107,14 @@ int EncryptionDecryption::encrypt_data(const string strFileName, string strPassw
 int EncryptionDecryption::decrypt_data(const string strFileName, const string strPassword)
 {
     int iCnt1 = 0, iCnt2 = 0;
-    string* strData = NULL;
+    string *strData = NULL;
     string strLine = "";
 
     if (strFileName == "")
         return -1; // enter the file name
 
     if (strPassword == "")
-        return -2; //enter the password
+        return -2; // enter the password
 
     if (!is_exists(strFileName))
         return -3; // file does not exists
@@ -147,7 +147,7 @@ int EncryptionDecryption::decrypt_data(const string strFileName, const string st
     return 0;
 }
 
-string EncryptionDecryption::set_password(string& strPassword)
+string EncryptionDecryption::set_password(string &strPassword)
 {
     int iCnt = 0;
 
@@ -195,7 +195,7 @@ bool EncryptionDecryption::check_enc_dec(const string strFileName)
     return false;
 }
 
-string* EncryptionDecryption::read_file(const string strFileName)
+string *EncryptionDecryption::read_file(const string strFileName)
 {
     int iCnt = 0;
 
@@ -229,7 +229,7 @@ bool EncryptionDecryption::is_exists(const string strFileName)
 int EncryptionDecryption::delete_file(const string strFileName)
 {
     if (strFileName == "")
-        return -1; //enter the file name
+        return -1; // enter the file name
 
     if (!is_exists(strFileName))
         return -2; // file does not exists

@@ -24,10 +24,10 @@ public:
     bool is_exists(const string strFileName);
 
 private:
-    string set_password(string& strPassword);
+    string set_password(string &strPassword);
     bool check_enc_dec(const string strFileName);
     bool check_password(const string strFileName, const string strPassword);
-    string* read_file(const string strFileName);
+    string *read_file(const string strFileName);
 };
 
 #endif // !ENCDECLOGIC_H

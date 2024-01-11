@@ -15,14 +15,13 @@ public:
     CreateFileDialog(QDialog *parent = 0);
 
 private:
-    QLabel *label;
-    QLineEdit *textbox;
+    QLabel *enter_file_name_label;
+    QLineEdit *file_name_textbox;
     QPushButton *create_button;
     QPushButton *cancel_button;
 
 private slots:
     void create_file_slot();
-    void cancel_slot();
 };
 
 #endif // CREATE_FILE_DIALOG_H
