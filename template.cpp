@@ -3,6 +3,9 @@
 #include <QResizeEvent>
 #include <QSizePolicy>
 #include <QMessageBox>
+#include <QScreen>
+#include <QGuiApplication>
+#include <QRect>
 
 Template::Template(QMainWindow *parent) : QMainWindow(parent)
 {

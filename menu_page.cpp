@@ -21,6 +21,7 @@ MenuPage::MenuPage(Template *parent) : Template(parent)
 
     create_file_button = new QPushButton("Create File", this);  // creating "Create File" button
     create_file_button->setGeometry(291, 200, 100, 30); // setting button position
+    connect(create_file_button, SIGNAL(clicked(bool)), this, SLOT(create_page_dialog()));
     // create_file_button->setStyleSheet("background-color: purple; border: 1px solid black;");
 
     write_file_button = new QPushButton("Write File", this);    // creating "Write File" button
@@ -38,6 +39,21 @@ MenuPage::MenuPage(Template *parent) : Template(parent)
     exit_button = new QPushButton("Exit", this);    // creating "Exit" button
     exit_button->setGeometry(541, 340, 100, 30);    // setting button position
     connect(exit_button, SIGNAL(clicked(bool)), this, SLOT(close()));
+
+    create_file_dialog = nullptr;
 }
 
-void MenuPage::close() { Template::close(); }
+void MenuPage::close() { Template::close();}
+
+void MenuPage::create_page_dialog()
+{
+    if (!create_file_dialog)
+        create_file_dialog = new CreateFileDialog;
+    create_file_dialog->show();
+}
+
+MenuPage::~MenuPage()
+{
+    create_file_button->close();
+    delete create_file_button;
+}

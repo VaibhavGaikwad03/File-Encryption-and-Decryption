@@ -26,12 +26,14 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         menu_page.cpp
         template.cpp
         enc_dec_logic.cpp
-        create_file_page.cpp
-        create_file_page.h
+
+
         enc_dec_logic.h
         menu_page.h
         template.h
         resources.qrc
+        create_file_dialog.cpp
+        create_file_dialog.h
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET File_Encryption_and_Decryption APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

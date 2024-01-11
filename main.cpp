@@ -5,8 +5,8 @@
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    MenuPage *menu_page = new MenuPage;
-    menu_page->show();
+    MenuPage menu_page;
+    menu_page.show();
 
     return app.exec();
 }
