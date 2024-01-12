@@ -22,6 +22,8 @@ private:
 
 private slots:
     void create_file_slot();
+
+    friend class MenuPage; // declaring MenuPage class as a friend so MenuPage can access our private members also
 };
 
 #endif // CREATE_FILE_DIALOG_H

@@ -36,6 +36,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         create_file_dialog.h
         write_file_dialog.cpp
         write_file_dialog.h
+        encrypt_file_dialog.cpp
+        encrypt_file_dialog.h
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET File_Encryption_and_Decryption APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

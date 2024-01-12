@@ -31,6 +31,7 @@ MenuPage::MenuPage(Template *parent) : Template(parent)
 
     encrypt_file_button = new QPushButton("Encrypt File", this); // creating "Encrypt File" button
     encrypt_file_button->setGeometry(291, 270, 100, 30);         // setting button position
+    connect(encrypt_file_button, SIGNAL(clicked(bool)), this, SLOT(encrypt_dialog()));
 
     decrypt_file_button = new QPushButton("Decrypt File", this); // creating "Decrypt File" button
     decrypt_file_button->setGeometry(541, 270, 100, 30);         // setting button position
@@ -42,30 +43,42 @@ MenuPage::MenuPage(Template *parent) : Template(parent)
     exit_button->setGeometry(541, 340, 100, 30); // setting button position
     connect(exit_button, SIGNAL(clicked(bool)), this, SLOT(close()));
 
+    // below steps are very important because if we couldn't set pointers to null. the program behaviour is undefined
     create_file_dialog = nullptr;
     write_file_dialog = nullptr;
+    encrypt_file_dialog = nullptr;
 }
 
-void MenuPage::close()
+void MenuPage::close() // close() slot gets called when the user wants to close the window with cross icon or with the exit button
 {
-    Template::close();
+    Template::close(); // when the close() function of Template class gets called, internally the closeEvent() funtion gets called
+    // when user closes the window it is mandatory the free the memory of the dialogs, if we dont freed the memory the dialogs memory doesn't gets free
     delete create_file_dialog;
     delete write_file_dialog;
 }
 
-void MenuPage::create_dialog()
+void MenuPage::create_dialog() // when user clicks the button "Create File" the create_dialog() slot gets called.
 {
-    if (!create_file_dialog)
+    if (!create_file_dialog) // this check is required because if user clicks button multiple times the dialog gets created multiple times
         create_file_dialog = new CreateFileDialog;
-    create_file_dialog->show();
+    create_file_dialog->file_name_textbox->setFocus(); // for user simplicity we set the focus to file name textbox.
+    create_file_dialog->show();                        // to show the dialog
 }
 
-void MenuPage::write_dialog()
+void MenuPage::write_dialog() // when user clicks the button "Write File" the write_file() slot gets called.
 {
-    if (!write_file_dialog)
+    if (!write_file_dialog) // this check is required because if user clicks button multiple times the dialog gets created multiple times
         write_file_dialog = new WriteFileDialog;
-    write_file_dialog->file_name_textbox->setFocus();
-    write_file_dialog->show();
+    write_file_dialog->file_name_textbox->setFocus(); // for user simplicity we set the focus to file name textbox.
+    write_file_dialog->show();                        // to show the dialog
+}
+
+void MenuPage::encrypt_dialog()
+{
+    if (!encrypt_file_dialog)
+        encrypt_file_dialog = new EncryptFileDialog;
+    encrypt_file_dialog->file_name_textbox->setFocus();
+    encrypt_file_dialog->show();
 }
 
 MenuPage::~MenuPage() {}

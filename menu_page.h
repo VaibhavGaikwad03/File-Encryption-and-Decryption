@@ -4,6 +4,7 @@
 #include "template.h"
 #include "create_file_dialog.h"
 #include "write_file_dialog.h"
+#include "encrypt_file_dialog.h"
 class QPushButton;
 class QLabel;
 class Template;
@@ -29,9 +30,11 @@ private:
     // dialogs
     CreateFileDialog *create_file_dialog;
     WriteFileDialog *write_file_dialog;
+    EncryptFileDialog *encrypt_file_dialog;
 private slots:
     void create_dialog();
     void write_dialog();
+    void encrypt_dialog();
     void close();
 };
 
