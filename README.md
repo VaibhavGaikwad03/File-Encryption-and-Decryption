@@ -46,7 +46,3 @@ If you are interested in contributing to the project, please follow these guidel
 - Make your changes and ensure the code follows the project's coding standards.
 - Test your changes thoroughly.
 - Submit a pull request with a clear description of your changes.
-
-## License
-
-This project is licensed under the [insert license type] license - see the [LICENSE.md](LICENSE.md) file for details.
