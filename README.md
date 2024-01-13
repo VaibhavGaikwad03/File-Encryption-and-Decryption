@@ -35,7 +35,7 @@ This C++ project provides a Graphical User Interface (GUI) for file encryption a
 ## Dependencies
 
 - This project is built using C++.
-- The GUI is implemented using [insert GUI library/toolkit used, if any].
+- The GUI is implemented using Qt Framework.
 
 ## Contribution Guidelines
 
