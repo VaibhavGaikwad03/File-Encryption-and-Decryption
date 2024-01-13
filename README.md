@@ -50,7 +50,3 @@ If you are interested in contributing to the project, please follow these guidel
 ## License
 
 This project is licensed under the [insert license type] license - see the [LICENSE.md](LICENSE.md) file for details.
-
-## Acknowledgments
-
-- Special thanks to [insert names or organizations] for their contributions or inspiration.
