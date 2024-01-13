@@ -25,10 +25,7 @@ This C++ project provides a Graphical User Interface (GUI) for file encryption a
 
 3. **Password Input:**
    - Enter a secure password. This password will be used for both encryption and decryption, so remember it.
-
-4. **Choose Operation:**
-   - Decide whether to encrypt or decrypt the selected file using the provided options.
-
+     
 5. **Execute Operation:**
    - Click the "Encrypt" or "Decrypt" button to perform the chosen operation on the selected file.
 
