@@ -25,7 +25,7 @@ private:
 private slots:
     void encrypt_file_slot();
 
-    friend class MenuPage;
+    friend class MenuPage;  // declaring MenuPage class as a friend so MenuPage can access our private members also
 };
 
 #endif // ENCRYPT_FILE_DIALOG_H
