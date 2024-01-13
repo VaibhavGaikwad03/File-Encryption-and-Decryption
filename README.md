@@ -17,7 +17,7 @@ This C++ project provides a Graphical User Interface (GUI) for file encryption a
 1. **Run the Application:**
    - Execute the compiled C++ program to launch the GUI.
 
-2. **File Selection:**
+2. **Selection:**
    - Click on the "Encrypt" button to choose the file you want to encrypt or decrypt.
      
 3. **File Name Input:**
