@@ -1,5 +1,5 @@
 # File Encryption and Decryption GUI
-
+ 
 This C++ project provides a Graphical User Interface (GUI) for file encryption and decryption, employing a simple method of toggling ASCII values. The application allows users to select a file, input a password, and choose whether to encrypt or decrypt the file. The encryption and decryption operations involve manipulating the ASCII values of each character.
  
 ## Features
