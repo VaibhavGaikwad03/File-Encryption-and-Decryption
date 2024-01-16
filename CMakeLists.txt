@@ -40,6 +40,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         encrypt_file_dialog.h
         decrypt_file_dialog.cpp
         decrypt_file_dialog.h
+        delete_file_dialog.cpp
+        delete_file_dialog.h
 
     )
 # Define target properties for Android with Qt 6 as:

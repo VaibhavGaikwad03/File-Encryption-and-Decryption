@@ -41,6 +41,7 @@ MenuPage::MenuPage(Template *parent) : Template(parent)
 
     delete_file_button = new QPushButton("Delete File", this); // creating "Delete File" button
     delete_file_button->setGeometry(350, 360, 100, 30);        // setting button position
+    connect(delete_file_button, SIGNAL(clicked(bool)), this, SLOT(delete_dialog()));
 
     exit_button = new QPushButton("Exit", this); // creating "Exit" button
     exit_button->setGeometry(550, 360, 100, 30); // setting button position
@@ -51,6 +52,7 @@ MenuPage::MenuPage(Template *parent) : Template(parent)
     write_file_dialog = nullptr;
     encrypt_file_dialog = nullptr;
     decrypt_file_dialog = nullptr;
+    delete_file_dialog = nullptr;
 }
 
 void MenuPage::close() // close() slot gets called when the user wants to close the window with cross icon or with the exit button
@@ -89,6 +91,14 @@ void MenuPage::decrypt_dialog()
         decrypt_file_dialog = new DecryptFileDialog;
     decrypt_file_dialog->file_name_textbox->setFocus();
     decrypt_file_dialog->show();
+}
+
+void MenuPage::delete_dialog()
+{
+    if (!delete_file_dialog)
+        delete_file_dialog = new DeleteFileDialog;
+    delete_file_dialog->file_name_textbox->setFocus();
+    delete_file_dialog->show();
 }
 
 void MenuPage::closeEvent(QCloseEvent *event)
