@@ -6,7 +6,7 @@
 class QLabel;
 class QLineEdit;
 class QPushButton;
-
+ 
 class CreateFileDialog : public QDialog, public EncryptionDecryption
 {
     Q_OBJECT;
