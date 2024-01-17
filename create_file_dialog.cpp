@@ -61,7 +61,7 @@ void CreateFileDialog::create_file_slot()
     }
     else // if file gets created successfully
     {
-        string message = "\"" + file_name_textbox->text().toStdString() + "\" created successfully.";
+        string message = "File \"" + file_name_textbox->text().toStdString() + "\" created successfully.";
         QMessageBox::information(this, tr("Success"), tr(message.c_str()));
         this->close();              // after successful creation of file close the dialog
         file_name_textbox->clear(); // and clear the text from textbox
