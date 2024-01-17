@@ -60,12 +60,20 @@ void EncryptFileDialog::encrypt_file_slot()
     else if (status == -3) // if password is less than or greater than 8 characters
         QMessageBox::warning(this, tr("Warning"), tr("Password should contains strictly 8 characters."));
     else if (status == -4) // if file does not exists
-        QMessageBox::critical(this, tr("Error"), tr("File does not exists!"));
+    {
+        string message = "File \"" + file_name_textbox->text().toStdString() + "\" does not exists!";
+        QMessageBox::critical(this, tr("Error"), tr(message.c_str()));
+    }
     else if (status == -5) // if file already encrypted
-        QMessageBox::critical(this, tr("Error"), tr("File already encrypted!"));
+    {
+        string message = "File \"" + file_name_textbox->text().toStdString() + "\" already encrypted!";
+        QMessageBox::critical(this, tr("Error"), tr(message.c_str()));
+    }
     else // success
     {
-        QMessageBox::information(this, tr("Success"), tr("Data encrypted successfully."));
+        string message = "Data from file \"" + file_name_textbox->text().toStdString() + "\" encrypted successfully.";
+
+        QMessageBox::information(this, tr("Success"), tr(message.c_str()));
         this->close(); // after successful encryption dialog gets closed
         // clearing the input fields
         file_name_textbox->clear();

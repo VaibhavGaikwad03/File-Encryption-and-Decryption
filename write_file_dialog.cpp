@@ -72,12 +72,19 @@ void WriteFileDialog::write_file_slot()
     else if (status == -2) // if data to be written is not provided by the user
         QMessageBox::warning(this, tr("Warning"), tr("Enter the data."));
     else if (status == -3) // if file does not exists
-        QMessageBox::critical(this, tr("Error"), tr("File does not exists!"));
+    {
+        string message = "File \"" + file_name_textbox->text().toStdString() + "\" does not exists!";
+        QMessageBox::critical(this, tr("Error"), tr(message.c_str()));
+    }
     else if (status == -4) // if there is an error while opening file
-        QMessageBox::critical(this, tr("Error"), tr("File could not be opened!"));
+    {
+        string message = "File \"" + file_name_textbox->text().toStdString() + "\" could not be opened!";
+        QMessageBox::critical(this, tr("Error"), tr(message.c_str()));
+    }
     else // success
     {
-        QMessageBox::information(this, tr("Success"), tr("Data has been successfully written to the file."));
+        string message = "Data has been successfully written to the file \"" + file_name_textbox->text().toStdString() + "\"";
+        QMessageBox::information(this, tr("Success"), tr(message.c_str()));
         this->close();              // after writing into file close the dialog
         file_name_textbox->clear(); // clears file name from textbox
         file_data_textbox->clear(); // clreas file data from textbox

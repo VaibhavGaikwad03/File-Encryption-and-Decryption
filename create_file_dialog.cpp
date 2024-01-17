@@ -55,10 +55,14 @@ void CreateFileDialog::create_file_slot()
     if (status == -1) // if user doesn't provide file name
         QMessageBox::warning(this, tr("Warning"), tr("Please enter the file name."));
     else if (status == -2) // if file is already exists
-        QMessageBox::critical(this, tr("Error"), tr("File already exists."));
+    {
+        string message = "File \"" + file_name_textbox->text().toStdString() + "\" already exists.";
+        QMessageBox::critical(this, tr("Error"), tr(message.c_str()));
+    }
     else // if file gets created successfully
     {
-        QMessageBox::information(this, tr("Success"), tr("File successfully created."));
+        string message = "\"" + file_name_textbox->text().toStdString() + "\" created successfully.";
+        QMessageBox::information(this, tr("Success"), tr(message.c_str()));
         this->close();              // after successful creation of file close the dialog
         file_name_textbox->clear(); // and clear the text from textbox
     }

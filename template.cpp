@@ -24,8 +24,8 @@ Template::Template(QMainWindow *parent) : QMainWindow(parent)
 
     setGeometry(x, y, windowWidth, windowHeight);
 
-    background = new QWidget(this);                   // creating widget for setting backgroud image
-    setCentralWidget(background);                     // setting widget at center
+    background = new QWidget(this); // creating widget for setting backgroud image
+    setCentralWidget(background);   // setting widget at center
     // background->setStyleSheet("background-image: url(:/res/images/background.jpg);");
     background->setStyleSheet("background-image: url(:/res/images/background.jpg);"
                               "background-position: center; /* Center the image */"

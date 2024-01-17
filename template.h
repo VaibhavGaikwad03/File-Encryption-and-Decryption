@@ -16,8 +16,8 @@ public:
 private:
     QWidget *background;
 
-// protected slots:
-//     void closeEvent(QCloseEvent *event);
+    // protected slots:
+    //     void closeEvent(QCloseEvent *event);
 };
 
 #endif // TEMPLATE_H
