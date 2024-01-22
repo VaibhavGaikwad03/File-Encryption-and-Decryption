@@ -5,7 +5,7 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QMessageBox>
-
+ 
 EncryptFileDialog::EncryptFileDialog(QDialog *parent) : QDialog(parent)
 {
     enter_file_name_label = new QLabel;                      // creating label to display label on dialog
