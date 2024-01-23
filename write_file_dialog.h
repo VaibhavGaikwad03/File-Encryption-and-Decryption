@@ -13,7 +13,7 @@ class WriteFileDialog : public QDialog, public EncryptionDecryption
 
 public:
     WriteFileDialog(QDialog *parent = 0);
-
+ 
 private:
     QLabel *enter_file_name_label;
     QLabel *enter_file_data_label;
